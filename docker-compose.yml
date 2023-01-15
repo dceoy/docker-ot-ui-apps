@@ -1,0 +1,17 @@
+---
+version: '3'
+
+services:
+  ot-ui-apps:
+    container_name: ot-ui-apps
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dceoy/ot-ui-apps:latest
+    ports:
+      - 80:80
+    entrypoint:
+      - /usr/sbin/nginx
+    command:
+      - -g
+      - daemon off;
